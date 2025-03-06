@@ -51,8 +51,8 @@ git submodule update
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 
 # Under your working directory
-git clone https://github.com/IDEA-Research/detrex.git
-cd detrex/
+git clone https://github.com/CQU-ADHRI-Lab/MI-DETR.git
+cd MI-DETR/
 pip install -r requirements.txt
 
 # build an editable version of detrex
@@ -66,33 +66,29 @@ pip install -e .
         <th align="center">Name</th>
         <th align="center">Backbone</th>
         <th align="center">Epochs</th>
-        <th align="center"><i>AP<sup style="font-size: smaller;">box</sup></i></th>
-        <th align="center"><i>AP<sup style="font-size: smaller;">mask</sup></i></th>
+        <th align="center"><i>AP</i></th>
         <th align="center">Download</th>
     </tr>
     <tr align="center">
-        <td align="center"><a href="./configs/dimaskdino_r50_4scale_bs16_12ep.yaml" style="text-decoration: none; color: black;">DI-MaskDINO</a></td>
+        <td align="center"><a href="./projects/midetr/configs/midetr-resnet/midetr_r50_4scale_12ep.py" style="text-decoration: none; color: black;">MI-DETR</a></td>
         <td align="center">ResNet50</td>
         <td align="center">12</td>
-        <td align="center">46.9</td>
-        <td align="center">42.3</td>
-        <td align="center"><a href="https://drive.google.com/file/d/1oQociMQSt_jmQtH3pm92i6zat8Gt83Oh/view?usp=drive_link" style="text-decoration: none; color: blue;">model</a></td>
+        <td align="center">50.2</td>
+        <td align="center"><a href="https://drive.google.com/file/d/1ONmGGOWcj4uzFjfrAQ9_H9ge8UhpdVxw/view?usp=drive_link" style="text-decoration: none; color: blue;">model</a></td>
     </tr>
     <tr align="center">
-        <td align="center"><a href="./configs/dimaskdino_r50_4scale_bs16_24ep.yaml" style="text-decoration: none; color: black;">DI-MaskDINO</a></td>
+        <td align="center"><a href="./projects/midetr/configs/midetr-resnet/midetr_r50_4scale_24ep.py" style="text-decoration: none; color: black;">MI-DETR</a></td>
         <td align="center">ResNet50</td>
         <td align="center">24</td>
-        <td align="center">49.6</td>
-        <td align="center">44.8</td>
-        <td align="center"><a href="https://drive.google.com/file/d/1FjoYiwGnrk_bk0nUM7GPeIMGENVLdx7n/view?usp=drive_link" style="text-decoration: none; color: blue;">model</a></td>
+        <td align="center">51.2</td>
+        <td align="center"><a href="https://drive.google.com/file/d/1FO1ht5N44clB1_65w5WQoUqB1COoM-lJ/view?usp=drive_link" style="text-decoration: none; color: blue;">model</a></td>
     </tr>
     <tr align="center">
-        <td align="center"><a href="./configs/dimaskdino_r50_4scale_bs16_50ep.yaml" style="text-decoration: none; color: black;">DI-MaskDINO</a></td>
-        <td align="center">ResNet50</td>
-        <td align="center">50</td>
-        <td align="center">51.9</td>
-        <td align="center">46.7</td>
-        <td align="center"><a href="https://drive.google.com/file/d/17_SErWYBWWCdYfR6i7OJtcBIlCDES10z/view?usp=drive_link" style="text-decoration: none; color: blue;">model</a></td>
+        <td align="center"><a href="./projects/midetr/configs/dino-swin/dino_swin_large_384_4scale_12ep.py" style="text-decoration: none; color: black;">MI-DETR</a></td>
+        <td align="center">Swin-Large-384</td>
+        <td align="center">12</td>
+        <td align="center">57.5</td>
+        <td align="center"><a href="https://drive.google.com/file/d/1pCEOIIJ_jrQPWDxdWV8pxV-ODATFlKol/view?usp=drive_link" style="text-decoration: none; color: blue;">model</a></td>
     </tr>
 </table>
 
@@ -100,40 +96,39 @@ pip install -e .
 
 ### Training
 
-Train DI-MaskDINO with 8 GPUs:
+Train MI-DETR with 8 GPUs:
 
 ```sh
-python train_net.py --num-gpus 8 --config-file configs/dimaskdino_r50_4scale_bs16_12ep.yaml OUTPUT_DIR /path/to/output
+python tools/train_net.py --config-file projects/midetr/configs/midetr-resnet/midetr_r50_4scale_12ep.py --num-gpus 8 --resume
 ```
 
 ### Evaluation
 
 You can download our pretrained models and evaluate them with the following commands. 
 ```sh
-python train_net.py --eval-only --num-gpus 8 --config-file /path/to/config_file MODEL.WEIGHTS /path/to/checkpoint_file
+python tools/train_net.py --config-file /path/to/config_file train.init_checkpoint=/path/to/model_checkpoint
 ```
 For example, to reproduce our result, you can copy the config path from the model table, download the pretrained checkpoint into `/path/to/checkpoint_file`, and run 
 ```sh
-python train_net.py --eval-only --num-gpus 8 --config-file configs/dimaskdino_r50_4scale_bs16_12ep.yaml MODEL.WEIGHTS /path/to/checkpoint_file
+python tools/train_net.py --config-file projects/midetr/configs/midetr-resnet/midetr_r50_4scale_12ep.py train.init_checkpoint=/path/to/model_checkpoint
 ```
 
 
-## <a name="CitingDIMaskDINO"></a>Citing DI-MaskDINO
+## <a name="CitingMIDETR"></a>Citing MI-DETR
 
 If you find our work helpful for your research, please consider citing the following BibTeX entry.
 
 ```BibTeX
-@inproceedings{nan2024di,
-  title={DI-MaskDINO: A Joint Object Detection and Instance Segmentation Model}, 
-  author={Zhixiong Nan and Xianghong Li and Tao Xiang and Jifeng Dai},
-  booktitle={Proceedings of the Neural Information Processing Systems},
-  year={2024}
+@inproceedings{nan2024mi,
+  title={MI-DETR: An Object Detection Model with Multi-time Inquiries Mechanism}, 
+  author={Zhixiong Nan and Xianghong Li and Jifeng Dai and Tao Xiang},
+  booktitle={Proceedings of  the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025}
 }
 ```
 
 ## Acknowledgement
 
 Many thanks to these excellent opensource projects: 
-* [MaskDINO](https://github.com/IDEA-Research/MaskDINO)
-* [Mask2Former](https://github.com/facebookresearch/Mask2Former) 
 * [DINO](https://github.com/IDEA-Research/DINO)
+* [detrex](https://github.com/IDEA-Research/detrex)
