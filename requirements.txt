@@ -1,0 +1,17 @@
+cloudpickle
+hydra-core
+omegaconf
+pybind11
+flake8 
+isort
+black
+autoflake
+timm
+pytest
+scipy
+psutil
+opencv-python
+wandb
+submitit
+einops
+fairscale
