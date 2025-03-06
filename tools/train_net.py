@@ -14,8 +14,6 @@ in the config file and implement a new train_net.py to handle them.
 """
 import logging
 import os
-os.environ['CUDA_VISIBLE_DEVICES']='6, 7'
-ids = [0, 1]
 import sys
 import time
 import torch
