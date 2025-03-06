@@ -108,11 +108,11 @@ python tools/train_net.py --config-file projects/midetr/configs/midetr-resnet/mi
 
 You can download our pretrained models and evaluate them with the following commands. 
 ```sh
-python tools/train_net.py --config-file /path/to/config_file train.init_checkpoint=/path/to/model_checkpoint
+python tools/train_net.py --config-file /path/to/config_file --num-gpus 8 --eval-only train.init_checkpoint=/path/to/model_checkpoint
 ```
 For example, to reproduce our result, you can copy the config path from the model table, download the pretrained checkpoint into `/path/to/checkpoint_file`, and run 
 ```sh
-python tools/train_net.py --config-file projects/midetr/configs/midetr-resnet/midetr_r50_4scale_12ep.py train.init_checkpoint=/path/to/model_checkpoint
+python tools/train_net.py --config-file projects/midetr/configs/midetr-resnet/midetr_r50_4scale_12ep.py --num-gpus 8 --eval-only train.init_checkpoint=/path/to/model_checkpoint
 ```
 
 
