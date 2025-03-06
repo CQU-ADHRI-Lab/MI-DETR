@@ -86,7 +86,7 @@ pip install -e .
         <td align="center"><a href="https://drive.google.com/file/d/1FO1ht5N44clB1_65w5WQoUqB1COoM-lJ/view?usp=drive_link" style="text-decoration: none; color: blue;">model</a></td>
     </tr>
     <tr align="center">
-        <td align="center"><a href="./projects/midetr/configs/dino-swin/dino_swin_large_384_4scale_12ep.py" style="text-decoration: none; color: black;">MI-DETR</a></td>
+        <td align="center"><a href="./projects/midetr/configs/midetr-swin/midetr_swin_large_384_4scale_12ep" style="text-decoration: none; color: black;">MI-DETR</a></td>
         <td align="center">Swin-Large-384</td>
         <td align="center">12</td>
         <td align="center">57.5</td>
