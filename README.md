@@ -1,4 +1,4 @@
-<h2 align="center"> <a href="https://arxiv.org/abs/2410.16707">MI-DETR: An Object Detection Model with Multi-time Inquiries Mechanism</a></h2>
+<h2 align="center"> <a href="https://arxiv.org/abs/2503.01463">MI-DETR: An Object Detection Model with Multi-time Inquiries Mechanism</a></h2>
 <h4 align="center" color="A0A0A0"> Zhixiong Nan, Xianghong Li, Jifeng Dai, Tao Xiang</h4>
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
 
