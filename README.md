@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![arXiv](https://img.shields.io/badge/Arxiv-2410.16707-b31b1b.svg?logo=arXiv)](https://www.arxiv.org/abs/2503.01463)
+[![arXiv](https://img.shields.io/badge/Arxiv-2503.01463-b31b1b.svg?logo=arXiv)](https://www.arxiv.org/abs/2503.01463)
 [![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/CQU-ADHRI-Lab/MI-DETR)
 [![License](https://img.shields.io/badge/Code%20License-Apache2.0-yellow)](https://github.com/CQU-ADHRI-Lab/MI-DETR/blob/main/LICENSE)
 
