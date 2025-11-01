@@ -28,7 +28,7 @@ Based on analyzing the character of cascaded decoder architecture commonly adopt
 ## Update
 [2025/3] Code for [MI-DETR](https://github.com/CQU-ADHRI-Lab/MI-DETR) is available here!
 
-[2025/2] MI-DETR has been accepted at CVPR 2024 as a poster!
+[2025/2] MI-DETR has been accepted at CVPR 2025 as a poster!
 
 ## Installation
 
